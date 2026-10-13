@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Salim Ben slama",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 86.4, "left": 33.64, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -36.9, "left": 600.7, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic2", "top": -36.9, "left": 360.7, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic3",
+      "top": -36.9,
+      "left": 120.7,
+      "attrs": { "distance": "325" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic3:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "ultrasonic2:GND", "esp:GND.2", "black", [ "v57.6", "h-1.2" ] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "ultrasonic3:VCC", "esp:5V", "red", [ "v19.2", "h-201.6", "v211.2" ] ],
+    [ "ultrasonic2:VCC", "esp:5V", "red", [ "v19.2", "h-441.6", "v211.2" ] ],
+    [ "ultrasonic1:VCC", "esp:5V", "red", [ "v19.2", "h-681.6", "v211.2" ] ],
+    [ "ultrasonic3:TRIG", "esp:23", "green", [ "v0" ] ],
+    [ "ultrasonic3:ECHO", "esp:22", "green", [ "v0" ] ],
+    [ "ultrasonic2:TRIG", "esp:19", "green", [ "v0" ] ],
+    [ "ultrasonic2:ECHO", "esp:18", "green", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "esp:17", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:16", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
